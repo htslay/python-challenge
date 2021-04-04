@@ -19,8 +19,18 @@ with open(csvpath) as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
+    # Variables
+    row_count = 0
+    net_total = 0
+
     # Read every row after header
     for row in csvreader:
-        print(row)
+        
+        # Finds the number of rows, which is the number of months
+        row_count += 1
+        net_total += int(row[1])
+
 
 print("Done with CSV")
+print(f"Number of months: {row_count}")
+print(f"Net total: ${net_total}")
