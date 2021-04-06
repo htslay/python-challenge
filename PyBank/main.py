@@ -8,16 +8,16 @@ import csv
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
 # Variables
-    row_count = 0
-    net_total = 0
-    # Current profit or loss value for a given month
-    value = 0
-    # Current delta between month and previous month
-    delta = 0
+row_count = 0
+net_total = 0
+# Current profit or loss value for a given month
+value = 0
+# Current delta between month and previous month
+delta = 0
 
-    # Lists to track data values
-    dates = []
-    changes = []
+# Lists to track data values
+dates = []
+changes = []
 
 # Read using CSV module
 with open(csvpath) as csvfile:
@@ -47,7 +47,16 @@ with open(csvpath) as csvfile:
         # Updates value for next caluculation
         value = int(row[1])
 
+# The rest of the math!    
+# ---------------------
 
-print("Done with CSV")
+# Average Change in profits/losses between months
+avg_change = sum(changes)/len(changes)
+
+
+# Information Output
+print("Finanical Analysis")
+print("------------------")
 print(f"Number of months: {row_count}")
 print(f"Net total: ${net_total}")
+print(f"Average Change: ${str(round(avg_change,2))}")
