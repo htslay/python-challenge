@@ -74,7 +74,7 @@ print(f"Greatest Increase in Profits: ${greatest_increase} during {greatest_mont
 print(f"Greatest Loss in Profits: -${str(abs(greatest_loss))} during {loss_month}")
 
 # Information Output (text file)
-output = open("output.txt", "w")
+output = open("Analysis/output.txt", "w")
 
 line1 = "Finanical Analysis"
 line2 = "------------------"
