@@ -53,10 +53,21 @@ with open(csvpath) as csvfile:
 # Average Change in profits/losses between months
 avg_change = sum(changes)/len(changes)
 
+# Greatest increase in profits
+greatest_increase = max(changes)
+greatest_index = changes.index(greatest_increase)
+greatest_month = dates[greatest_index]
 
-# Information Output
+# Greatest loss in profits
+greatest_loss = min(changes)
+loss_index = changes.index(greatest_loss)
+loss_month = dates[loss_index]
+
+# Information Output (terminal)
 print("Finanical Analysis")
 print("------------------")
 print(f"Number of months: {row_count}")
 print(f"Net total: ${net_total}")
 print(f"Average Change: ${str(round(avg_change,2))}")
+print(f"Greatest Increase in Profits: ${greatest_increase} during {greatest_month}")
+print(f"Greatest Loss in Profits: ${greatest_loss} during {loss_month}")
