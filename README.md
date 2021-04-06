@@ -1,3 +1,7 @@
+The scripts and text files in this repository are my original work analyzing two given datasets. Data and guidlines for the project provided by Trilogy Education Services through Georgia Tech.
+
+The remainder of this document is instructional material provided by Trilogy Education Services through Georgia Tech:
+
 # Python Homework - Py Me Up, Charlie
 
 ## Background
