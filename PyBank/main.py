@@ -8,6 +8,7 @@ import csv
 csvpath = os.path.join('Resources', 'budget_data.csv')
 
 # Variables
+# ---------
 row_count = 0
 net_total = 0
 # Current profit or loss value for a given month
@@ -70,4 +71,16 @@ print(f"Number of months: {row_count}")
 print(f"Net total: ${net_total}")
 print(f"Average Change: ${str(round(avg_change,2))}")
 print(f"Greatest Increase in Profits: ${greatest_increase} during {greatest_month}")
-print(f"Greatest Loss in Profits: ${greatest_loss} during {loss_month}")
+print(f"Greatest Loss in Profits: -${str(abs(greatest_loss))} during {loss_month}")
+
+# Information Output (text file)
+output = open("output.txt", "w")
+
+line1 = "Finanical Analysis"
+line2 = "------------------"
+line3 = str(f"Number of months: {row_count}")
+line4 = str(f"Net total: ${net_total}")
+line5 = str(f"Average Change: ${str(round(avg_change,2))}")
+line6 = str(f"Greatest Increase in Profits: ${greatest_increase} during {greatest_month}")
+line7 = str(f"Greatest Loss in Profits: -${str(abs(greatest_loss))} during {loss_month}")
+output.write('{}\n{}\n{}\n{}\n{}\n{}\n{}\n'.format(line1,line2,line3,line4,line5,line6,line7))
